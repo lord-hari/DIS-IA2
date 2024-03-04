@@ -1,0 +1,208 @@
+/* Font definitions for Lato-Light and Lato-Bold */
+@font-face {
+    font-family: 'Lato-Light';
+    src: url("fonts/lato/Lato-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url("fonts/lato/Lato-Bold.ttf") format('truetype');
+}
+
+/* Global styles for the entire page */
+body {
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #42b2f3;
+    color: #fff;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    font-family: 'Lato-Light', sans-serif;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+/* Centered text style */
+.centered {
+    text-align: center;
+}
+
+/* Main content area styles */
+main {
+    background-color: white;
+    background-image: linear-gradient(#42b2f3, #4d9e03);
+    margin-top: 100px;
+    box-sizing: border-box;
+}
+
+/* HTML and body styles for height control */
+html, body {
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+/* Animal details main container styles */
+#animal-details-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+/* Animal details body styles */
+#animal-details-body {
+    overflow: hidden;
+}
+
+/* Background styles for HTML */
+html {
+    background-color: white;
+    background-image: linear-gradient(#42b2f3, #4d9e03);
+}
+
+/* Image row styles */
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Image container styles */
+.image-container {
+    flex-basis: 25%;
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image styles */
+.image-container img {
+    width: 250px;
+    height: auto;
+    display: block;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Paragraph styles within image container */
+.image-container p {
+    margin: 0;
+    padding: 5px;
+    border: none;
+    font-family: 'Lato-Bold', sans-serif;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+/* Search bar styles */
+.search-bar {
+    padding-top: 40px;
+    margin-bottom: 40px;
+    background-color: #42b2f3;
+}
+
+/* Search form styles */
+.search-bar form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Placeholder text color */
+::placeholder {
+    color: black;
+}
+
+/* Search input styles */
+.search-bar input {
+    width: 400px;
+    margin-right: 10px;
+    font-family: 'Lato-Light', sans-serif;
+    color: black;
+    font-size: medium;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: #42b2f3;
+}
+
+/* Animal details container styles */
+.animal-details-container {
+    display: flex;
+    height: max-content;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 101.275px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Animal details column styles */
+.animal-details-column {
+    flex: 1;
+    min-width: 33.33%;
+    align-items: center;
+}
+
+/* Animal details column image styles */
+.animal-details-column-img {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* Abilities container styles */
+.abilities-container {
+    background-color: #484848;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+/* Animal text styles */
+#animal-text {
+    text-align: center;
+    color: #fff;
+    font-size: large;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: none;
+}
+
+/* Footer content styles */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
