@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Super Auto Pets Wiki</title>
+    <!-- Include the main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Include external icon stylesheet -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <header>
+        <!-- Main header with the title of the wiki -->
+        <h1 class="centered">Not Super Auto Pets </br>
+            Wiki</h1>
+    </header>
+    <main>
+        <!-- Search bar with a form for searching animals -->
+        <div class="search-bar">
+            <form id="search-form" action="{{ url_for('search') }}" method="GET">
+                <!-- Search input container with an icon and input field -->
+                <div class="search-input-container">
+                    <i class="fi fi-rr-search"></i>
+                    <input id="searchInput" type="text" name="search_query" placeholder="Search...">
+                </div>
+            </form>
+        </div>
+        <!-- Display search results using image rows -->
+        <div id="search-results">
+            {% for row in image_rows %}
+                <div class="image-row">
+                    {% for image in row %}
+                        <!-- Display each animal image with a link to its details page -->
+                        <div class="image-container">
+                            <a href="{{ url_for('animal_details', animal_name=image.split('.')[0]) }}">
+                                <img src="{{ url_for('static', filename='assets/' + image) }}" alt="{{ image.split('.')[0] }}">
+                            </a>
+                            <!-- Display the animal name below its image -->
+                            <p class="centered">{{ image.split('.')[0] }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Include jQuery at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include external script.js at the end of the body -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Footer section with left and right text -->
+    <footer>
+        <div class="footer-content">
+            <div class="left-text">
+                <!-- Text on the left side of the footer -->
+                DIS IA2
+            </div>
+            <div class="right-text">
+                <!-- Two pieces of text on the right side of the footer -->
+                <p>Developed by Hari</p>
+                <p>Mr. Stewart</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

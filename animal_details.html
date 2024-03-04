@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" id="animal-details-html">
+<head>
+    <!-- Metadata for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title dynamically set based on animal name -->
+    <title>{{ animal.Name }}</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="animal-details-body">
+    <!-- Header section with the capitalized animal name -->
+    <header>
+        <h1>{{ animal.Name | capitalize }}</h1>
+    </header>
+    <!-- Main content section for animal details -->
+    <main id="animal-details-main">
+        <!-- Container for organizing columns -->
+        <div class="animal-details-container">
+            <!-- Left column for displaying the large image of the animal -->
+            <div class="animal-details-column">
+                <div class="animal-details-column-img">
+                    <img src="{{ animal.path_large }}" alt="{{ animal.name }} Large">
+                </div>
+            </div>
+            <!-- Middle column for displaying statistics about the animal -->
+            <div class="animal-details-column" id="animal-text">
+                <h2>Statistics</h2>
+                <p>Attack: {{ animal.Attack }}</p>
+                <p>Health: {{ animal.Health }}</p>
+                <p>Tier: {{ animal.Tier }}</p>
+                <p>Tiermax: {{ animal.TierMax }}</p>
+                <p>Rollable: {{ "Yes" if animal.Rollable else "No" }}</p>
+            </div>
+            <!-- Right column for displaying abilities of the animal -->
+            <div class="animal-details-column" id="animal-text">
+                <h2>Abilities</h2>
+                <div class="abilities-container">
+                    {% for ability in animal.Abilities %}
+                        <p>{{ "Level " ~ ability.Level ~ ": " ~ ability.About }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer section with left and right text -->
+    <footer>
+        <div class="footer-content">
+            <div class="left-text">
+                DIS IA2
+            </div>
+            <div class="right-text">
+                <p>Developed by Hari</p>
+                <p>Mr. Stewart</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
